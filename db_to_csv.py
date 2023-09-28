@@ -11,6 +11,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 This solution is based on a proposal by Faisal K K on their blog:
    https://hevodata.com/blog/postgresql-to-bigquery-data-migration/
+   
 Authors:
    - Oscar Emmanuel Torres Carrillo (etorres@cg-sys.com)
    - Julio César Culebro González (jculebro@cg-sys.com) - LinkedIn: linkedin.com/in/julio-c%C3%A9sar-culebro-gonz%C3%A1lez-92038443/
@@ -23,6 +24,7 @@ Description: This code connects to the postgres database (local) and invokes the
 you must configure the connection parameters to postgres, they are after the comment "# Connection parameters",
 you can also adjust the path and names of output and error files, they are after the comment "# Output and Error file's paths".
 It must be invoked with the frequency that we want to synchronize the data, either with cron or with scheduled Windows tasks.
+
 Descripcion: Este código se conecta a la base de datos postgres (local) e invoca la función de base de datos db_to_csv(), 
 debes configurar los parámetros de conexión a postgres, están después del comentario "# Parámetros de conexión", 
 tambien puedes ajustar la ruta y nombres de archivos de salida y error, están después del comentario "# Rutas de archivos de salida y errores".

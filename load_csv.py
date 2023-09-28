@@ -20,7 +20,7 @@ Authors:
    - Oscar Emmanuel Torres Carrillo (etorres@cg-sys.com)
    - Julio César Culebro González (jculebro@cg-sys.com) - LinkedIn: linkedin.com/in/julio-c%C3%A9sar-culebro-gonz%C3%A1lez-92038443/
 
-File Name: db_to_csv.py
+File Name: load_csv.py
 Version: 1.0.1
 Creation Date: 2023-09
    

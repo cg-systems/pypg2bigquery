@@ -14,9 +14,11 @@ This solution is based on a proposal by Faisal K K on their blog:
 Authors:
    - Oscar Emmanuel Torres Carrillo (etorres@cg-sys.com)
    - Julio César Culebro González (jculebro@cg-sys.com) - LinkedIn: linkedin.com/in/julio-c%C3%A9sar-culebro-gonz%C3%A1lez-92038443/
+   
 File Name: db_to_csv.py
 Version: 1.0.1
 Creation Date: 2023-09
+
 Description: This code connects to the postgres database (local) and invokes the database function db_to_csv(), 
 you must configure the connection parameters to postgres, they are after the comment "# Connection parameters",
 you can also adjust the path and names of output and error files, they are after the comment "# Output and Error file's paths".

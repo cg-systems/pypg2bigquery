@@ -13,14 +13,16 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-
 This solution is based on a proposal by Faisal K K on their blog:
    https://hevodata.com/blog/postgresql-to-bigquery-data-migration/
-
 
 Authors:
    - Oscar Emmanuel Torres Carrillo (etorres@cg-sys.com)
    - Julio César Culebro González (jculebro@cg-sys.com) - LinkedIn: linkedin.com/in/julio-c%C3%A9sar-culebro-gonz%C3%A1lez-92038443/
+
+File Name: db_to_csv.py
+Version: 1.0.1
+Creation Date: 2023-09
    
 Description: This code connects to the local PostgreSQL database and queries the configuration table for BigQuery operations. 
 Based on the configuration, it searches for CSV files by table name in the configuration and processes them to be loaded into Google Cloud Storage (GCS). 

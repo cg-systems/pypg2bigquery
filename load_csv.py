@@ -21,8 +21,8 @@ Authors:
    - Julio César Culebro González (jculebro@cg-sys.com) - LinkedIn: linkedin.com/in/julio-c%C3%A9sar-culebro-gonz%C3%A1lez-92038443/
 
 File Name: load_csv.py
-Version: 1.0.1
-Creation Date: 2023-09
+Version: 1.0.3
+Creation Date: 2023-11
    
 Description: This code connects to the local PostgreSQL database and queries the configuration table for BigQuery operations. 
 Based on the configuration, it searches for CSV files by table name in the configuration and processes them to be loaded into Google Cloud Storage (GCS). 
@@ -46,7 +46,7 @@ import subprocess
 
 # Connection parameters
 # Parámetros de conexión
-dbname = 'db'
+dbname = 'bd'
 host = 'localhost'
 port = '5432'
 user = 'user'
@@ -73,7 +73,7 @@ def imprimir_en_salida(texto):
 def imprimir_en_errores(texto):
     print(texto, file=sys.stderr)
 
-imprimir_en_salida("Ver: 1.0.2")
+imprimir_en_salida("Ver: 1.0.3")
 
 # Connect to data base
 # Conectar a la base de datos
@@ -96,8 +96,7 @@ try:
     # Process the results
     # Procesar los resultados
     for row in cursor.fetchall():
-
-        bq_empresa = row[0]  
+        bq_empresa = row[0]
         bq_tabla = row[1]
         bq_campo_llave_primaria_1 = row[3]
         bq_bucket_name = row[4]
@@ -116,24 +115,21 @@ try:
         csv_files = [filename for filename in sorted(os.listdir(local_path)) if filename.startswith(bq_tabla + '_') and filename.endswith('.csv')]
 
         for csv_file in csv_files:
-        
             # Generate paths for Google Cloud Storage
             # Generar las rutas para Google Cloud Storage
             gsutil_source = os.path.join(local_path, csv_file)
             gsutil_destination = f'gs://{bq_bucket_name}/{bq_empresa}/{csv_file}'
             bq_schema_url = f"gs://{bq_bucket_name}/{bq_tabla}_schema.json"
             bq_schema_file = os.path.join(r'C:\bq', f'{bq_tabla}_schema.json')
-            
             bq_schema_file_del = os.path.join(r'C:\bq', f'{bq_tabla}_del_schema.json')
 
             try:
-
                 imprimir_en_salida(f"Procesando archivo: {gsutil_source} - {gsutil_destination}")
 
                 # Upload the file to Google Cloud Storage using gsutil
                 # Subir el archivo a Google Cloud Storage utilizando gsutil
                 gsutil_cmd = ['gsutil', 'cp', gsutil_source, gsutil_destination]
-                res_process = subprocess.run(gsutil_cmd, check=False, stderr=subprocess.PIPE, stdout=subprocess.PIPE, text=True, shell=True)  
+                res_process = subprocess.run(gsutil_cmd, check=False, stderr=subprocess.PIPE, stdout=subprocess.PIPE, text=True, shell=True)
                 imprimir_en_salida('returncode:' + str(res_process.returncode))
                 imprimir_en_salida(res_process.stdout)
                 imprimir_en_errores(res_process.stderr)
@@ -156,11 +152,10 @@ try:
                 # Ejecutar comando bq load
                 bq_load_result = os.system(bq_load_command)
 
-                if bq_load_result == 0:  
+                if bq_load_result == 0:
                     imprimir_en_salida(f"Carga a {bq_table} exitosa.")
 
                     if '_del' in csv_file:
-
                         # Generate the DELETE query dynamically
                         # Generar la consulta DELETE dinámicamente
                         consulta_delete = (
@@ -181,45 +176,40 @@ try:
                             imprimir_en_errores(f"Error en la consulta DELETE para {bq_table}:")
                             imprimir_en_errores(delete_result.stderr)
                             process_ok = False
-                            
-                        # Generate the DELETE query for [table]_del
-                        # Generar la consulta DELETE para [tabla]_del
-                        consulta_delete_del = (
+                        
+                        # Generate the DROP query for [table]_del
+                        # Generar la consulta DROP para [tabla]_del
+                        consulta_drop_del = (
                             f'bq query --use_legacy_sql=false '
-                            f'"DELETE {bq_dataset_name}.{bq_tabla}_del f WHERE f.empresa = UPPER(\'{bq_empresa}\')"'
+                            f'"DROP TABLE {bq_dataset_name}.{bq_tabla}_del"'
                         )
 
-                        # Execute the DELETE query in BigQuery.
-                        # Ejecutar la consulta DELETE en BigQuery
-                        delete_del_result = subprocess.run(consulta_delete_del, capture_output=True, text=True, shell=True)
+                        # Execute the DROP query in BigQuery.
+                        # Ejecutar la consulta DROP en BigQuery
+                        drop_del_result = subprocess.run(consulta_drop_del, capture_output=True, text=True, shell=True)
 
-                        if delete_del_result.returncode == 0 or "[DONE]" in delete_del_result.stdout:
+                        if drop_del_result.returncode == 0 or "[DONE]" in drop_del_result.stdout:
                             imprimir_en_salida(f"Consulta DELETE para {bq_table}_del ejecutada exitosamente.")
-                            imprimir_en_salida(delete_del_result.stdout)
+                            imprimir_en_salida(drop_del_result.stdout)
                         else:
                             imprimir_en_errores(f"Error en la consulta DELETE para {bq_table}_del:")
-                            imprimir_en_errores(delete_del_result.stderr)
+                            imprimir_en_errores(drop_del_result.stderr)
                             process_ok = False
 
                     else:
-
                         # Retrieve the list of fields to update/insert.
                         # Obtener la lista de campos a actualizar / insertar
                         bq_campos_select = row[2].split(',')
-
                         # Key fields
                         # Campos clave
                         campos_clave = ['empresa', bq_campo_llave_primaria_1]
-
                         # Create the list of fields to update/insert, excluding the key fields
                         # Crear la lista de campos a actualizar / insertar excluyendo los campos clave
                         campos_actualizar = [campo for campo in bq_campos_select if campo not in campos_clave]
-
                         # Generate the list of fields for the SET and SELECT queries.
                         # Generar la lista de campos para las consultas SET y SELECT
                         campos_set = ', '.join([f't.{campo} = s.{campo}' for campo in campos_actualizar])
                         campos_select = ', '.join(campos_clave + campos_actualizar)
-
                         # Generate the UPDATE query.
                         # Generar la consulta UPDATE
                         consulta_update = (
@@ -227,9 +217,8 @@ try:
                             f'"UPDATE {bq_dataset_name}.{bq_tabla} t '
                             f'SET {campos_set} '
                             f'FROM {bq_dataset_name}.{bq_tabla}_upd s '
-                            f'WHERE s.empresa = UPPER(\'{bq_empresa}\') AND t.{campos_clave[0]} = s.{campos_clave[0]} AND t.{campos_clave[1]} = s.{campos_clave[1]}"'
+                            f'WHERE s.empresa = UPPER(\'{bq_empresa}\') AND t.{campos_clave[1]} = s.{campos_clave[1]}"'
                         )
-
                         # Generate the INSERT query.
                         # Generar la consulta INSERT
                         consulta_insert = (
@@ -240,17 +229,14 @@ try:
                             f'WHERE NOT CONCAT({campos_clave[1]}, \'-\', {campos_clave[0]}) IN '
                             f'(SELECT CONCAT({campos_clave[1]}, \'-\', {campos_clave[0]}) FROM {bq_dataset_name}.{bq_tabla})"'
                         )
-
                         # Execute the UPDATE query in BigQuery.
                         # Ejecutar la consulta UPDATE en BigQuery
                         update_result = subprocess.run(consulta_update, capture_output=True, text=True, shell=True)
-
                         if update_result.returncode == 0 or "[DONE]" in update_result.stdout:
                             imprimir_en_salida(f"Consulta UPDATE para {bq_table} ejecutada exitosamente.")
                             imprimir_en_salida(update_result.stdout)
                         else:
                             imprimir_en_errores(f"Error en la consulta UPDATE para {bq_table}:")
-                            imprimir_en_errores(consulta_update)
                             imprimir_en_errores(update_result.stderr)
                             imprimir_en_errores(update_result.stdout)
                             process_ok = False
@@ -258,7 +244,6 @@ try:
                         # Execute the INSERT query in BigQuery.
                         # Ejecutar la consulta INSERT en BigQuery
                         insert_result = subprocess.run(consulta_insert, capture_output=True, text=True, shell=True)
-
                         if insert_result.returncode == 0 or "[DONE]" in insert_result.stdout:
                             imprimir_en_salida(f"Consulta INSERT para {bq_table} ejecutada exitosamente.")
                             imprimir_en_salida(insert_result.stdout)
@@ -267,30 +252,27 @@ try:
                             imprimir_en_errores(insert_result.stderr)
                             process_ok = False
 
-                        # Generate the DELETE query for [table]_upd
-                        # Generar la consulta DELETE para [tabla]_upd
-                        consulta_delete_upd = (
+                        # Generate the DROP query for [table]_upd
+                        # Generar la consulta DROP para [tabla]_upd
+                        consulta_drop_upd = (
                             f'bq query --use_legacy_sql=false '
-                            f'"DELETE {bq_dataset_name}.{bq_tabla}_upd f WHERE f.empresa = UPPER(\'{bq_empresa}\')"'
+                            f'"DROP TABLE {bq_dataset_name}.{bq_tabla}_upd"'
                         )
-
-                        # Execute the DELETE query in BigQuery.
-                        # Ejecutar la consulta DELETE en BigQuery
-                        delete_upd_result = subprocess.run(consulta_delete_upd, capture_output=True, text=True, shell=True)
-
-                        if delete_upd_result.returncode == 0 or "[DONE]" in delete_upd_result.stdout:
-                            imprimir_en_salida(f"Consulta DELETE para {bq_table}_upd ejecutada exitosamente.")
-                            imprimir_en_salida(delete_upd_result.stdout)
+                        # Execute the DROP query in BigQuery.
+                        # Ejecutar la consulta DROP en BigQuery
+                        drop_upd_result = subprocess.run(consulta_drop_upd, capture_output=True, text=True, shell=True)
+                        if drop_upd_result.returncode == 0 or "[DONE]" in drop_upd_result.stdout:
+                            imprimir_en_salida(f"Consulta DROP para {bq_table}_upd ejecutada exitosamente.")
+                            imprimir_en_salida(drop_upd_result.stdout)
                         else:
-                            imprimir_en_errores(f"Error en la consulta DELETE para {bq_table}_upd:")
-                            imprimir_en_errores(delete_upd_result.stderr)
+                            imprimir_en_errores(f"Error en la consulta DROP para {bq_table}_upd:")
+                            imprimir_en_errores(drop_upd_result.stderr)
                             process_ok = False
 
                     if process_ok:
                         # If everything was successful, delete the CSV file
                         # Si todo fue exitoso, eliminar el archivo CSV
                         os.remove(gsutil_source)
-                        
                         # Delete the file from Google Cloud Storage using gsutil.
                         # Eliminar el archivo de Google Cloud Storage utilizando gsutil
                         gsutil_cmd_del = ['gsutil', 'rm', gsutil_destination]

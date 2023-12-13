@@ -66,4 +66,3 @@ This project aims to simplify data synchronization, enabling users to manage the
 ## ⚖️ License
 
 - Source Code Licensing: Our project's source code is licensed under the Apache 2.0 License. This license permits the use, modification, and distribution of the code, subject to certain conditions outlined in the Apache 2.0 License.
-<a href="https://github.com/jculebro"><img src="https://avatars.githubusercontent.com/u/2366703?v=4" alt="Contributor" style="width:5%; border-radius: 50%;"/></a>

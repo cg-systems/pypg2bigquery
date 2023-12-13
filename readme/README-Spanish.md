@@ -3,7 +3,7 @@
   <img src='pypg2biqquery_logo.jpg' width=550>
 </p>
 <p align="center">
-    【Español | <a href="readme/README.md">Spanish</a> | 
+    【Español | <a href="..\README.md">English</a> | 
 </p>
 
 ## 📖 Descripción General

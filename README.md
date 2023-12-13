@@ -1,7 +1,7 @@
 # PyPg2BigQuery
 
 <p align="center">
-  <img src='\readme\pypg2biqquery_logo.jpg' width=550>
+  <img src='\readme\pypg2biqquery_logo.png' width=550>
 </p>
 
 <p align="center">
@@ -62,6 +62,7 @@ This project aims to simplify data synchronization, enabling users to manage the
 ## 👨‍💻‍ Software Contributors
 
 <a href="https://github.com/emmanuhellt"><img src="https://avatars.githubusercontent.com/u/136921808?v=4" alt="Contributor" style="width:5%; border-radius: 50%;"/></a>
+<a href="https://github.com/jculebro"><img src="https://avatars.githubusercontent.com/u/2366703?v=4" alt="Contributor" style="width:5%; border-radius: 50%;"/></a>
 
 ## ⚖️ License
 

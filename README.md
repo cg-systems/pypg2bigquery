@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-    【English | <a href="readme/README-Spanish.md">Spanish</a> | 
+    【English | <a href="readme/README-Spanish.md">Español</a> | 
 </p>
 
 ## 📖 Overview

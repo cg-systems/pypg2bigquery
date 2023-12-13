@@ -42,9 +42,9 @@ Both scripts operate at the desired frequency to ensure consistency and constant
 
 ## Recommended Usage
 
-&ensp; 1. Clone the repository to your local environment.
-&ensp; 2. Configure connection parameters and file paths as needed in both scripts.
-&ensp; 3. Run db_to_csv.py periodically to extract data from PostgreSQL to CSV files.
+&ensp; 1. Clone the repository to your local environment. </br>
+&ensp; 2. Configure connection parameters and file paths as needed in both scripts. </br>
+&ensp; 3. Run db_to_csv.py periodically to extract data from PostgreSQL to CSV files. </br>
 &ensp; 4. Run load_csv.py periodically to load data from GCS to BigQuery and synchronize tables.
 
 <br><br>

@@ -1,6 +1,6 @@
 # PyPg2BigQuery
 <p align="center">
-  <img src='pypg2biqquery_logo.jpg' width=550>
+  <img src='pypg2biqquery_logo.png' width=550>
 </p>
 <p align="center">
     【Español | <a href="..\README.md">English</a> | 

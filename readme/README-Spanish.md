@@ -37,9 +37,9 @@ Ambos scripts operan con la frecuencia deseada para garantizar la consistencia y
 <br><br>
 
 ## Uso Recomendado
-  1. Clona el repositorio en tu entorno local.
-  2. Configura los parámetros de conexión y las rutas de archivos según sea necesario en ambos scripts.
-  3. Ejecuta db_to_csv.py periódicamente para extraer datos de PostgreSQL a archivos CSV.
+  1. Clona el repositorio en tu entorno local. </br>
+  2. Configura los parámetros de conexión y las rutas de archivos según sea necesario en ambos scripts. </br>
+  3. Ejecuta db_to_csv.py periódicamente para extraer datos de PostgreSQL a archivos CSV. </br>
   4. Ejecuta load_csv.py periódicamente para cargar datos desde GCS a BigQuery y sincronizar tablas.
 
 <br><br>

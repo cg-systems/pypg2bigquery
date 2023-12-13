@@ -56,3 +56,7 @@ Nota: PyPg2BigQuery se presenta como una herramienta esencial para aquellos que 
 ## 👨‍💻‍ Colaboradores del Software
 <a href="https://github.com/emmanuhellt"><img src="https://avatars.githubusercontent.com/u/136921808?v=4" alt="Colaborador" style="width:5%; border-radius: 50%;"/></a>
 <a href="https://github.com/jculebro"><img src="https://avatars.githubusercontent.com/u/2366703?v=4" alt="Colaborador" style="width:5%; border-radius: 50%;"/></a>
+
+## ⚖️ Licencia
+
+- Licencia del Código Fuente: El código fuente de nuestro proyecto está licenciado bajo la Licencia Apache 2.0. Esta licencia permite el uso, modificación y distribución del código, sujeto a ciertas condiciones descritas en la Licencia Apache 2.0.

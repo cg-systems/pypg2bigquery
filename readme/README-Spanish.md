@@ -77,6 +77,15 @@ Tu contribución en <a href="https://www.buymeacoffee.com/pypg2bq">Buy Me a Coff
 
  </br></br>
 
+## 🤝🏻 Agradecimientos
+
+Queremos expresar nuestro agradecimiento especial a Faisal K K, cuyo artículo "PostgreSQL to BigQuery Data Migration" fue una fuente invaluable de inspiración y orientación para el desarrollo de este proyecto. Su trabajo proporcionó la base y las mejores prácticas que guiaron la creación de PyPg2BigQuery.
+<br><br>
+Puedes encontrar el artículo original de Faisal K K en <a href="https://hevodata.com/blog/postgresql-to-bigquery-data-migration/">hevodata.com</a>. 
+<br><br>
+Agradecemos a Faisal por compartir su experiencia y conocimiento, lo que contribuyó significativamente al éxito de PyPg2BigQuery.
+<br><br>
+
 ## ⚖️ Licencia
 
 - Licencia del Código Fuente: El código fuente de nuestro proyecto está licenciado bajo la Licencia Apache 2.0. Esta licencia permite el uso, modificación y distribución del código, sujeto a ciertas condiciones descritas en la Licencia Apache 2.0.

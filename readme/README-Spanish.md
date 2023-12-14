@@ -60,6 +60,21 @@ Este proyecto busca simplificar la sincronización de datos, permitiendo a los u
 <a href="https://github.com/emmanuhellt"><img src="https://avatars.githubusercontent.com/u/136921808?v=4" alt="Colaborador" style="width:5%; border-radius: 50%;"/></a>
 <a href="https://github.com/jculebro"><img src="https://avatars.githubusercontent.com/u/2366703?v=4" alt="Colaborador" style="width:5%; border-radius: 50%;"/></a>
 
+<br><br>
+
+## Comparte un Café Virtual y Apoya a PyPg2BigQuery ☕
+
+Si PyPg2BigQuery ha aportado valor a tus proyectos, ¡considera compartir un café virtual con nosotros! </br>
+Tu contribución en <a href="https://www.buymeacoffee.com/pypg2bq">Buy Me a Coffee</a> nos ayuda a mantener nuestro código alimentado y respalda el desarrollo continuo. </br></br>
+
+<a href="https://www.buymeacoffee.com/pypg2bq">¡Donar un Café a PyPg2BigQuery!</a>
+
+ </br>
+
+¡Gracias por ser parte de nuestra comunidad!
+
+ </br></br>
+
 ## ⚖️ Licencia
 
 - Licencia del Código Fuente: El código fuente de nuestro proyecto está licenciado bajo la Licencia Apache 2.0. Esta licencia permite el uso, modificación y distribución del código, sujeto a ciertas condiciones descritas en la Licencia Apache 2.0.

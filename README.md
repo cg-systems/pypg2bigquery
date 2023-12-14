@@ -81,6 +81,15 @@ Thank you for being a part of our community!
 
 </br></br>
 
+## 🤝🏻 Acknowledgments
+
+We would like to extend our special thanks to Faisal K, whose article "PostgreSQL to BigQuery Data Migration" served as an invaluable source of inspiration and guidance for the development of this project. His work provided the foundation and best practices that guided the creation of PyPg2BigQuery.
+<br><br>
+You can find Faisal K's original article on <a href="https://hevodata.com/blog/postgresql-to-bigquery-data-migration/">hevodata.com</a>. 
+<br><br>
+We appreciate Faisal for sharing his expertise and knowledge, which significantly contributed to the success of PyPg2BigQuery.
+<br><br>
+
 ## ⚖️ License
 
 - Source Code Licensing: Our project's source code is licensed under the Apache 2.0 License. This license permits the use, modification, and distribution of the code, subject to certain conditions outlined in the Apache 2.0 License.

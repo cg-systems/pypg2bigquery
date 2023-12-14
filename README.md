@@ -54,9 +54,11 @@ Both scripts operate at the desired frequency to ensure consistency and constant
 The primary goal of PyPg2BigQuery is to provide an efficient and user-friendly solution for maintaining consistency between a local database and BigQuery on the Google Cloud Platform. 
 This project aims to simplify data synchronization, enabling users to manage their data effectively and leverage the capabilities of both platforms in an integrated manner.
 <br><br>
-
 **Note:** PyPg2BigQuery is presented as an essential tool for those seeking an automated and reliable solution for data management between local and cloud environments, contributing to operational efficiency and informed decision-making.
-
+<br><br>
+The main objective of data centralization with PyPg2BigQuery is to facilitate the creation of charts and dashboards in Looker Studio. By consolidating information from your local database into BigQuery, you can make the most of the analysis and visualization capabilities offered by Looker Studio, allowing you to make informed decisions and derive valuable insights from your data.
+<br><br>
+Make the most of PyPg2BigQuery to enhance your analysis and visualizations in Looker Studio!
 <br><br>
 
 ## 👨‍💻‍ Software Contributors

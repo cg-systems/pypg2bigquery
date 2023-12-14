@@ -55,6 +55,12 @@ Este proyecto busca simplificar la sincronización de datos, permitiendo a los u
 
 <br><br>
 
+La centralización de datos con PyPg2BigQuery tiene como objetivo facilitar la creación de gráficas y dashboards en Looker Studio. Al consolidar la información de tu base de datos local en BigQuery, podrás aprovechar al máximo las capacidades de análisis y visualización ofrecidas por Looker Studio, permitiéndote tomar decisiones informadas y obtener información valiosa a partir de tus datos.
+<br><br>
+¡Aprovecha al máximo PyPg2BigQuery para potenciar tus análisis y visualizaciones en Looker Studio!
+
+<br><br>
+
 ## 👨‍💻‍ Colaboradores del Software
 
 <a href="https://github.com/emmanuhellt"><img src="https://avatars.githubusercontent.com/u/136921808?v=4" alt="Colaborador" style="width:5%; border-radius: 50%;"/></a>

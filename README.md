@@ -73,7 +73,11 @@ Your contribution on <a href="https://www.buymeacoffee.com/pypg2bq">Buy Me a Cof
 
 <a href="https://www.buymeacoffee.com/pypg2bq">Donate a Coffee to PyPg2BigQuery!</a>
 
-<br><br>
+<br>
+
+Thank you for being a part of our community!
+
+</br></br>
 
 ## ⚖️ License
 

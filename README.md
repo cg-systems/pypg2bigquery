@@ -43,7 +43,7 @@ Both scripts operate at the desired frequency to ensure consistency and constant
 ## Recommended Usage
 
 &ensp; 1. Centralize information from multiple remote Postgresql databases in BigQuery. </br>
-&ensp; 2. Build scorecards in Google Looker Studio and any other BI tool that has access to BigQuery. </br>
+&ensp; 2. Build dashboards in Google Looker Studio and any other BI tool that has access to BigQuery. </br>
 
 <br><br>
 

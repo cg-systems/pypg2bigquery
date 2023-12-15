@@ -3,7 +3,7 @@
   <img src='pypg2biqquery_logo.png' width=550>
 </p>
 <p align="center">
-    【Español | <a href="..\README.md">English</a> | 
+    【Español | <a href="..\README.md">English</a> |
 </p>
 
 ## 📖 Descripción General
@@ -38,11 +38,9 @@ Ambos scripts operan con la frecuencia deseada para garantizar la consistencia y
 <br><br>
 
 ## Uso Recomendado
-  &ensp; 1. Clona el repositorio en tu entorno local. </br>
-  &ensp; 2. Configura los parámetros de conexión y las rutas de archivos según sea necesario en ambos scripts. </br>
-  &ensp; 3. Ejecuta db_to_csv.py periódicamente para extraer datos de PostgreSQL a archivos CSV. </br>
-  &ensp; 4. Ejecuta load_csv.py periódicamente para cargar datos desde GCS a BigQuery y sincronizar tablas.
-
+  &ensp; 1. Centralizar la información de múltiples bases de datos Postgresql remotas en BigQuery. </br>
+  &ensp; 2. Generar tableros de indicadores en Google Looker Studio y cualquier otra herramienta BI que tenga acceso a BigQuery. </br>
+ 
 <br><br>
 
 ## Objetivo Principal
@@ -81,7 +79,7 @@ Tu contribución en <a href="https://www.buymeacoffee.com/pypg2bq">Buy Me a Coff
 
 Queremos expresar nuestro agradecimiento especial a Faisal K K, cuyo artículo "PostgreSQL to BigQuery Data Migration" fue una fuente invaluable de inspiración y orientación para el desarrollo de este proyecto. Su trabajo proporcionó la base y las mejores prácticas que guiaron la creación de PyPg2BigQuery.
 <br><br>
-Puedes encontrar el artículo original de Faisal K K en <a href="https://hevodata.com/blog/postgresql-to-bigquery-data-migration/">hevodata.com</a>. 
+Puedes encontrar el artículo original de Faisal K K en <a href="https://hevodata.com/blog/postgresql-to-bigquery-data-migration/">hevodata.com</a>.
 <br><br>
 Agradecemos a Faisal por compartir su experiencia y conocimiento, lo que contribuyó significativamente al éxito de PyPg2BigQuery.
 <br><br>

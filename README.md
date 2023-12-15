@@ -5,14 +5,14 @@
 </p>
 
 <p align="center">
-    【English | <a href="readme/README-Spanish.md">Español</a> | 
+    【English | <a href="readme/README-Spanish.md">Español</a> |
 </p>
 
 ## 📖 Overview
 
-Pypg2BiqQuery is a project aimed at simplifying and automating data synchronization between a local PostgreSQL database and Google BigQuery on the Google Cloud platform. 
+Pypg2BiqQuery is a project aimed at simplifying and automating data synchronization between a local PostgreSQL database and Google BigQuery on the Google Cloud platform.
 <br><br>
-This project consists of two main scripts: db_to_csv.py and load_csv.py. 
+This project consists of two main scripts: db_to_csv.py and load_csv.py.
 Both scripts operate at the desired frequency to ensure consistency and constant data updates between the two platforms.
 
 ## Key Features
@@ -42,16 +42,14 @@ Both scripts operate at the desired frequency to ensure consistency and constant
 
 ## Recommended Usage
 
-&ensp; 1. Clone the repository to your local environment. </br>
-&ensp; 2. Configure connection parameters and file paths as needed in both scripts. </br>
-&ensp; 3. Run db_to_csv.py periodically to extract data from PostgreSQL to CSV files. </br>
-&ensp; 4. Run load_csv.py periodically to load data from GCS to BigQuery and synchronize tables.
+&ensp; 1. Centralize information from multiple remote Postgresql databases in BigQuery. </br>
+&ensp; 2. Build scorecards in Google Looker Studio and any other BI tool that has access to BigQuery. </br>
 
 <br><br>
 
 ## Primary Objective
 
-The primary goal of PyPg2BigQuery is to provide an efficient and user-friendly solution for maintaining consistency between a local database and BigQuery on the Google Cloud Platform. 
+The primary goal of PyPg2BigQuery is to provide an efficient and user-friendly solution for maintaining consistency between a local database and BigQuery on the Google Cloud Platform.
 This project aims to simplify data synchronization, enabling users to manage their data effectively and leverage the capabilities of both platforms in an integrated manner.
 <br><br>
 **Note:** PyPg2BigQuery is presented as an essential tool for those seeking an automated and reliable solution for data management between local and cloud environments, contributing to operational efficiency and informed decision-making.
@@ -85,7 +83,7 @@ Thank you for being a part of our community!
 
 We would like to extend our special thanks to Faisal K, whose article "PostgreSQL to BigQuery Data Migration" served as an invaluable source of inspiration and guidance for the development of this project. His work provided the foundation and best practices that guided the creation of PyPg2BigQuery.
 <br><br>
-You can find Faisal K's original article on <a href="https://hevodata.com/blog/postgresql-to-bigquery-data-migration/">hevodata.com</a>. 
+You can find Faisal K's original article on <a href="https://hevodata.com/blog/postgresql-to-bigquery-data-migration/">hevodata.com</a>.
 <br><br>
 We appreciate Faisal for sharing his expertise and knowledge, which significantly contributed to the success of PyPg2BigQuery.
 <br><br>

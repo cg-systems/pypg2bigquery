@@ -39,7 +39,7 @@ Ambos scripts operan con la frecuencia deseada para garantizar la consistencia y
 
 ## Uso Recomendado
   &ensp; 1. Centralizar la información de múltiples bases de datos Postgresql remotas en BigQuery. </br>
-  &ensp; 2. Generar tableros de indicadores en Google Looker Studio y cualquier otra herramienta BI que tenga acceso a BigQuery. </br>
+  &ensp; 2. Generar tableros de indicadores en Google Looker Studio y cualquier otra herramienta BI que tenga acceso a BigQuery. </br>
  
 <br><br>
 
